@@ -99,7 +99,7 @@ public class ReturnBooks extends javax.swing.JFrame {
     
     //for book count changes 
     public void updatedbookcount(){
-        int bookId = Integer.parseInt(r_invalid.getText());
+        int bookId = Integer.parseInt(rb_studentbookid.getText());
      try{
            Connection con=DBconnection.getConnection();
            String sql="Update book_details set quantity = quantity +1 where book_id = ?";
@@ -1056,8 +1056,8 @@ public class ReturnBooks extends javax.swing.JFrame {
 
     private void rbreturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbreturnActionPerformed
          if(returnbooks()==true){
-             JOptionPane.showMessageDialog(this,"Book Returned Successfully");
              updatedbookcount();
+             JOptionPane.showMessageDialog(this,"Book Returned Successfully");
          }else{
              JOptionPane.showMessageDialog(this,"Book Returning Failed");
          }
